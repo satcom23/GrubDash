@@ -85,7 +85,7 @@ function create(req, res) {
   orders.push(order);
   res.status(201).json({ data: order });
 }
-function destroy(req, res) {
+function destroy(_, res) {
   const index = orders.findIndex((order) => order.id === res.locals.order);
   orders.splice(index, 1);
   res.sendStatus(204);
